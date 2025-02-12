@@ -1,14 +1,20 @@
 import { Button, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    Button: {
-        width: '25%',
+    Button:{
+        width: "25%",
         height: 52,
-        backgroundColor: 'Red'
+        backgroundColor: "white",
+        borderColor: "black",
+        borderRadius: 10,
+        borderWidth: 2,
+        justifyContent: "center",
+        alignItems: "center",
+        
     },
     title:{
-        color: 'Dark',
-        fontSize: 20,
-        
-    }
+        color: "Dark",
+        fontSize: 24,
+        fontWeight: 'bold',
+  }
 })

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Button } from "../components/button";
 import { Input } from "../components/input";
 import { router } from "expo-router";
+import { ButtonQR } from '../components/button_qr';
+
 
 export default function Index() {
 
@@ -20,9 +22,10 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Gestão de Materiais: {name}</Text>
-      <Input onChangeText={setName} />
-      <Button title="Login" onPress={directPage} />
-      <Button title="Sair" />
+      <Input placeholder="Numero da Ordem" onChangeText={setName} />
+      {/*<ButtonQR title="Scanner" style={styles.CameraElement} onPress={directPage} />*/}
+      <Button title="Scanner" onPress={directPage} />
+      <Button title="Tabela" />
     </View>
   );
 }
@@ -40,4 +43,10 @@ const styles = StyleSheet.create({
     fontSize: 36,
     fontWeight: "bold",
   },
+  CameraElement: {
+    backgroundColor: "orange",
+    
+    height: 100,
+    flex: 2,
+  }
 });
