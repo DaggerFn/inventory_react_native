@@ -2,12 +2,17 @@ import { View, Text, StyleSheet, Alert } from "react-native";
 import { useState } from "react";
 import { Button } from "../components/button";
 import { Input } from "../components/input";
-
+import { router } from "expo-router";
 
 export default function Index() {
 
   function handleMessage() {
     Alert.alert("No camera device found");
+  }
+
+
+  function directPage(){
+    router.navigate('/camera')
   }
 
   const [name, setName] = useState("");
@@ -16,7 +21,7 @@ export default function Index() {
     <View style={styles.container}>
       <Text style={styles.title}>Gestão de Materiais: {name}</Text>
       <Input onChangeText={setName} />
-      <Button title="Login" onPress={handleMessage} />
+      <Button title="Login" onPress={directPage} />
       <Button title="Sair" />
     </View>
   );
