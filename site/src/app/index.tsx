@@ -4,6 +4,8 @@ import { Button } from "../components/button";
 import { Input } from "../components/input";
 import { router } from "expo-router";
 import { ButtonQR } from '../components/button_qr';
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { directPage, tabelRouter } from "../components/navegator/navi";
 
 
 export default function Index() {
@@ -13,19 +15,18 @@ export default function Index() {
   }
 
 
-  function directPage(){
-    router.navigate('/camera')
-  }
 
   const [name, setName] = useState("");
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Gestão de Materiais: {name}</Text>
-      <Input placeholder="Numero da Ordem" onChangeText={setName} />
-      {/*<ButtonQR title="Scanner" style={styles.CameraElement} onPress={directPage} />*/}
-      <Button title="Scanner" onPress={directPage} />
-      <Button title="Tabela" />
+      <View style={styles.dataArea}>
+        <Input placeholder="Numero da Ordem" onChangeText={setName} />
+        <ButtonQR title="Scanner"  onPress={directPage} />
+      </View>
+      {/*<Button title="Scanner" onPress={directPage} />*/}
+      <Button title="Tabela" onPress={tabelRouter} />
     </View>
   );
 }
@@ -35,18 +36,23 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 32,
     justifyContent: "center",
-    gap: 5,
+    gap: 8,
+  },
+  dataArea:{
+    justifyContent: "space-between",
+    flexDirection: 'row'
   },
   title: {
     alignItems: "center",
     color: "blue",
     fontSize: 36,
     fontWeight: "bold",
+    width: '100%',
   },
   CameraElement: {
     backgroundColor: "orange",
-    
-    height: 100,
     flex: 2,
+    height: 100,
+    width: 150,  
   }
 });

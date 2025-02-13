@@ -1,8 +1,8 @@
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { BarcodeScanningResult, BarcodeType, } from 'expo-camera';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ButtonQR } from '../components/button_qr';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button } from '../components/button';
 import { router } from 'expo-router';
 
 
@@ -23,7 +23,7 @@ export default function App() {
     // Camera permissions are not granted yet.
     return (
       <View style={styles.container}>
-        <ButtonQR title='◀ Voltar' onPress={backHome}/>
+        <Button style={styles.buttonBack} title='◀ Voltar' onPress={backHome}/>
         <Text style={styles.message}>Aceite Permisao da Camera</Text>
         <Button onPress={requestPermission} title="De permisao para acessar a câmera" />
       </View>
@@ -38,11 +38,10 @@ export default function App() {
     <View style={styles.container}>
       <CameraView style={styles.camera} facing={facing}>
         <View style={styles.buttonContainer}>
-          <ButtonQR title='◀ Voltar' onPress={backHome}/>
+          <Button style={styles.buttonBack} title='◀ ' onPress={backHome}/>
           <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-            <Text style={styles.text}>Virar Camera</Text>
+          <Text style={styles.text}>Virar Camera</Text>
           </TouchableOpacity>
-          
         </View>
       </CameraView>
     </View>
@@ -76,5 +75,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
+  },
+  buttonBack: {
+    width: "19%",
+    height: 78,
+    backgroundColor: "white",
+    borderColor: "black",
+    borderRadius: 10,
+    borderWidth: 2,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
