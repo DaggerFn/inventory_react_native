@@ -9,5 +9,4 @@ export const style = StyleSheet.create({
         borderColor: "#121214",
         fontSize: 28,
     },
-    
 })

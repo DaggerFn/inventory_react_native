@@ -5,7 +5,7 @@ import { Input } from "../components/input";
 import { router } from "expo-router";
 import { ButtonQR } from '../components/button_qr';
 import * as ScreenOrientation from 'expo-screen-orientation';
-import { directPage, tabelRouter } from "../components/navegator/navi";
+import { directPage, tabelRouter,cameraPersmision } from "../components/navegator/navi";
 
 
 export default function Index() {
@@ -13,7 +13,6 @@ export default function Index() {
   function handleMessage() {
     Alert.alert("No camera device found");
   }
-
 
 
   const [name, setName] = useState("");
@@ -27,6 +26,7 @@ export default function Index() {
       </View>
       {/*<Button title="Scanner" onPress={directPage} />*/}
       <Button title="Tabela" onPress={tabelRouter} />
+      <Button title="test" onPress={cameraPersmision} />
     </View>
   );
 }

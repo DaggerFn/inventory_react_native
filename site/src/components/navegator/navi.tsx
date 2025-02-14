@@ -12,3 +12,7 @@ export function tabelRouter(){
 export function backHome(){
     router.navigate('/')
   }
+
+export function cameraPersmision(){
+  router.navigate('/camera2')
+}
