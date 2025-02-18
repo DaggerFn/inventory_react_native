@@ -14,5 +14,5 @@ export function backHome(){
   }
 
 export function cameraPersmision(){
-  router.navigate('/camera2')
+  router.navigate('/scanner')
 }

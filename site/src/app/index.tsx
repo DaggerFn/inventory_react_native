@@ -22,11 +22,11 @@ export default function Index() {
       <Text style={styles.title}>Gestão de Materiais: {name}</Text>
       <View style={styles.dataArea}>
         <Input placeholder="Numero da Ordem" onChangeText={setName} />
-        <ButtonQR title="Scanner"  onPress={directPage} />
+        <ButtonQR title="Scanner"  onPress={cameraPersmision} />
       </View>
       {/*<Button title="Scanner" onPress={directPage} />*/}
       <Button title="Tabela" onPress={tabelRouter} />
-      <Button title="test" onPress={cameraPersmision} />
+      <Button title="test" onPress={directPage} />
     </View>
   );
 }
