@@ -22,13 +22,16 @@ export default function Home() {
                 title: "Overview",
                 headerShown: false,
             }}/>
-            <CameraView style={StyleSheet.absoluteFill} facing="back" onBarcodeScanned={({ data }) => { console.log('data', data); setScannedData(data); }}/>
+            <CameraView style={StyleSheet.absoluteFill} facing="back" onBarcodeScanned={({ data }) => { console.log('data', data); }}/>
+            {/*<CameraView style={StyleSheet.absoluteFill} facing="back" onBarcodeScanned={({ data }) => { console.log('data', data); setScannedData(data); }}/>/*}
                         
             {/* Exibe a informação do QR code se existir */}
             {scannedData && (
                 <Text style={styles.scannedText}>QR Code: {scannedData}</Text>
             )}
             {/*<Button title="Voltar" onPress={() => setScannedData(null)} />*/}
+            
+
             <Button title="Voltar" onPress={backHome}/>
         </SafeAreaView>
     )
