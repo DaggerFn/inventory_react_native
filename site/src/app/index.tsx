@@ -6,7 +6,7 @@ import { router } from "expo-router";
 import { ButtonQR } from '../components/button_qr';
 import * as ScreenOrientation from 'expo-screen-orientation';
 import { directPage, tabelRouter,cameraPersmision } from "../components/navegator/navi";
-
+import { handlePostData } from "./serverConnect/post";
 
 export default function Index() {
 
@@ -26,7 +26,9 @@ export default function Index() {
       </View>
       {/*<Button title="Scanner" onPress={directPage} />*/}
       <Button title="Tabela" onPress={tabelRouter} />
-      <Button title="test" onPress={directPage} />
+      <Button title="Post" onPress={handlePostData} />
+      <Button title="Get" onPress={handlePostData} />
+      {/*<Button title="test" onPress={directPage} />*/}
     </View>
   );
 }

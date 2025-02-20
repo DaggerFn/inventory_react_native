@@ -2,8 +2,9 @@ import { Camera, CameraView, CameraType } from "expo-camera";
 import { Stack } from "expo-router";
 import { useState } from 'react';
 
-import { StyleSheet,SafeAreaView, Text, StatusBar, Linking, Button } from "react-native";
+import { StyleSheet,SafeAreaView, Text, StatusBar, Linking } from "react-native";
 import { backHome } from "@/src/components/navegator/navi";
+import { Button } from "@/src/components/button";
 
 export default function Home() {
   const [facing, setFacing] = useState<CameraType>('back');
